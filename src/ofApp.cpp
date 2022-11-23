@@ -43,7 +43,6 @@ void ofApp::draw() {
 	drawScene();
 	paddleLeft.draw();
 	paddleRight.draw();
-
 	ball.draw();
 	drawStats();
 }
@@ -54,7 +53,7 @@ void ofApp::drawScene() {
 	ofSetColor(0);
 	ofDrawRectangle(ofGetWidth() / 2, ofGetHeight() / 2, ofGetWidth() - 20, ofGetHeight() - 20);
 	ofDrawLine(ofGetWidth() / 2, 10, ofGetWidth() / 2, ofGetHeight() - 10);
-	// to do : how to draw ciscle with outline over the line (here not satisfying solution)
+	// to do : how to draw circle with stroke line (here not satisfying solution)
 	ofFill();
 	ofSetColor(0);
 	ofDrawCircle(ofGetWidth() / 2, ofGetHeight() / 2, 36);
@@ -65,11 +64,8 @@ void ofApp::drawScene() {
 //--------------------------------------------------------------
 void ofApp::drawStats() {
 	ofSetColor(255);
-
-	//ofDrawBitmapString(ofToString(scoreLeft), ofGetWidth()/4, 30);
 	font.drawString(ofToString(scoreLeft), ofGetWidth() / 4, 35);
 	font.drawString(ofToString(scoreRight), 3 * ofGetWidth() / 4, 35);
-	//font.drawString(ofToString(score), 0.90*ofGetWidth(), 20);
 }
 
 
@@ -92,7 +88,6 @@ void ofApp::keyPressed(int key) {
 	else if (key == 's') {
 		paddleRight.step = 3;
 	}
-
 }
 
 //--------------------------------------------------------------
@@ -100,7 +95,6 @@ void ofApp::keyReleased(int key) {
 	if ((key == 'z') || (key == 's')) {
 		paddleRight.step = 0;
 	}
-
 }
 
 //--------------------------------------------------------------
