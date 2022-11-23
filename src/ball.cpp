@@ -32,7 +32,7 @@ void Ball::update() {
 	x += vx * dx;
 	y += vy * dy;
 
-	if ((y >= ofGetHeight() - 10 - 10) || (y <= 0 + 10 + 10)) {
+	if ((y >= ofGetHeight() - 10 - radius) || (y <= 0 + 10 + radius)) {
 		dy *= -1;
 	}
 
@@ -49,6 +49,4 @@ void Ball::direction(int i, int j) {
 	dx *= i;
 	dy *= j;
 }
-
-
 
